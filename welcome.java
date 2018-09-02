@@ -21,23 +21,23 @@ public  class welcome extends JFrame implements ActionListener{
       al.setBounds(480,450,140 ,45);
       al.setBackground(Color.blue);
       al.setForeground(Color.white);
-      al.setFont(new Font("Arial" ,Font.BOLD,16));
+      al.setFont(new Font("Arial" ,Font.PLAIN,18));
       ul.setBounds(650,450,140,45);
       ul.setBackground(Color.red);
       ul.setForeground(Color.white);
-      ul.setFont(new Font("Arial" ,Font.BOLD,16));
+      ul.setFont(new Font("Arial" ,Font.PLAIN,18));
 
 
       c.setBackground(Color.white);
-      l1 =new JLabel("Welocme to Ashish Pvt. Ltd.");
-      l1.setFont(new Font("Arial",Font.BOLD,50));
+      l1 =new JLabel("Flight Reservation System");
+      l1.setFont(new Font("Arial",Font.PLAIN,60));
       add(l1);
 
        l2 =new JLabel(mg);
        add(l2);
       l1.setForeground(Color.white);
       l2.setBounds(0,0,1920,1280);
-      l1.setBounds(300,150,700,50);
+      l1.setBounds(350,150,700,65);
 
       al.addActionListener(this);
       ul.addActionListener(this);

@@ -484,7 +484,6 @@ public void actionPerformed(ActionEvent e)
             pane1.add(obj);
             this.dispose();
           }catch(Exception ex2){
-            JOptionPane.showMessageDialog(this ,"ashish"+ex2);
 
           }
          }
@@ -492,8 +491,6 @@ public void actionPerformed(ActionEvent e)
    }
     }
    catch(Exception ex) {
-     ex.printStackTrace();
-     JOptionPane.showMessageDialog(this ,"kumar"+ex);
    }
 }
 
