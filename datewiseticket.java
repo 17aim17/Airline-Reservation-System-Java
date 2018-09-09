@@ -49,11 +49,13 @@ public class datewiseticket extends JInternalFrame implements ActionListener{
 
     b1 =new JButton("Show");
     b1.setFont(new Font("Arial" ,Font.BOLD ,18));
-    b1.setBackground(Color.white);
+    b1.setBackground(Color.red);
+    b1.setForeground(Color.white);
 
     b2 =new JButton("Get");
     b2.setFont(new Font("Arial" ,Font.BOLD ,18));
-    b2.setBackground(Color.white);
+    b2.setBackground(Color.red);
+    b2.setForeground(Color.white);
 
     cb1 = new JComboBox();
     cb1.setFont(new Font("Arial" ,Font.BOLD ,15));
@@ -79,17 +81,17 @@ public class datewiseticket extends JInternalFrame implements ActionListener{
 
     /*set bounds*/
     l1.setBounds(450,50,200,30);
-    cb1.setBounds(670,50,100,30);
+    cb1.setBounds(670,50,130,30);
     b1.setBounds(570,100,100,30);
 
 
-    l2.setBounds(350,150,100,30);
-    t1.setBounds(480,150,100,30);
-    l3.setBounds(620,150,100,30);
-    t2.setBounds(750,150,100,30);
+    l2.setBounds(300,150,100,30);
+    t1.setBounds(450,150,130,30);
+    l3.setBounds(600,150,100,30);
+    t2.setBounds(750,150,130,30);
 
-    l4.setBounds(480,200,150,30);
-    cb2.setBounds(670,200,150,30);
+    l4.setBounds(450,200,150,30);
+    cb2.setBounds(650,200,150,30);
     b2.setBounds(570,250,100,30);
 
     t1.setEditable(false);
@@ -139,6 +141,8 @@ try{
         }
         String get1 ="SELECT distinct dept_date FROM booking_master WHERE a_code ='"+cb1.getSelectedItem()+"';";
         ResultSet rs1 =st.executeQuery(get1);
+        cb2.removeAllItems();
+        cb2.addItem("Select");
         while(rs1.next()){
           java.util.Date d1 = sdf1.parse(rs1.getString(1));
           String d =sdf.format(d1);
@@ -182,6 +186,9 @@ try{
     if(sp!=null)
     {
       remove(sp);
+      sp=null;
+      tb=null;
+      repaint();
     }
      if(num!=0){
        int i=0;
@@ -228,6 +235,7 @@ try{
 
      }
      else{
+
         JOptionPane.showMessageDialog(this,"Selected Data not found");
 
      }

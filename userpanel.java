@@ -11,6 +11,7 @@ class userpanel extends JFrame implements ActionListener{
     JMenuItem i1 ,i2 ,i3, i4,i5,i6,i7,i8,i9,i10,i11,i12;
     JRadioButtonMenuItem r1 ,r2 ,r3, r4,r5,r6,r7,r8;
     JMenuBar mb;
+      JLabel l2;
     JDesktopPane pane=new JDesktopPane();
     ImageIcon mg =new ImageIcon("plane.jpeg");
     String user ="";
@@ -31,6 +32,7 @@ class userpanel extends JFrame implements ActionListener{
         m2.setFont(new Font("Arial",Font.PLAIN,15));
         m3.setFont(new Font("Arial",Font.PLAIN,15));
         m4.setFont(new Font("Arial",Font.PLAIN,15));
+
 
         setContentPane(pane);
 
@@ -79,8 +81,11 @@ class userpanel extends JFrame implements ActionListener{
 
         setJMenuBar(mb);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-
+        l2 =new JLabel(mg);
+        add(l2);
+        l2.setBounds(0,0,1920,1280);
         setVisible(true);
+        JOptionPane.showMessageDialog(this ,"Welcome "+user+" !!!");
 }
 
 public void actionPerformed(ActionEvent e)

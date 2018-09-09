@@ -16,6 +16,7 @@ class adminpanel extends JFrame implements ActionListener{
      JLabel l2;
     adminpanel()
     {
+
        setDefaultCloseOperation(EXIT_ON_CLOSE);
         mb =new JMenuBar();
         mb.setBackground(Color.white);
@@ -89,6 +90,7 @@ class adminpanel extends JFrame implements ActionListener{
           mb.add(Box.createRigidArea(new Dimension(100,30)));
           setExtendedState(JFrame.MAXIMIZED_BOTH);
           setVisible(true);
+          JOptionPane.showMessageDialog(this ,"Welcome admin !!!");
     }
 
 public void actionPerformed(ActionEvent e){
