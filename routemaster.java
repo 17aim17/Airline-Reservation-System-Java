@@ -249,7 +249,9 @@ public class routemaster extends JInternalFrame implements ActionListener,ItemLi
                 JOptionPane.showMessageDialog(this,"Fields can not be empty");
               }
             else{
-
+                if(!t3.getText().matches("^-?\\d+$") || !t4.getText().matches("^-?\\d+$")){
+                  JOptionPane.showMessageDialog(this ,"Use Whole Numbers please");
+                }else{
                 String create = "insert into route values('"+cb1.getSelectedItem()+"','"+cb2.getSelectedItem()+"','"+t1.getText()+"','"+t2.getText()+"',"+t4.getText()+","+t3.getText()+")";
                 st.executeUpdate(create);
                 JOptionPane.showMessageDialog(this,"Added successfully");
@@ -266,6 +268,7 @@ public class routemaster extends JInternalFrame implements ActionListener,ItemLi
                 st.executeUpdate(update);
 
     	       }
+           }
            }
         }
         catch(Exception ex){

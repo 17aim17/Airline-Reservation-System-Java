@@ -218,7 +218,12 @@ public void actionPerformed(ActionEvent e)
           JOptionPane.showMessageDialog(this ,"Name Must include only a-z or A-Z");
         }
         else{
-
+          if(!validation.checkContact(t3.getText())){
+            JOptionPane.showMessageDialog(this ,"Phone Number Must be 10 digits ");
+          }else{
+          if(!t4.getText().matches("^[A-Za-z0-9+_.-]+@(.+)$")){
+              JOptionPane.showMessageDialog(this ,"Emter a Valid Email");
+          }else{
           java.util.Date jd =sdf.parse(t7.getText());
           String jod =sdf1.format(jd);
 
@@ -232,6 +237,8 @@ public void actionPerformed(ActionEvent e)
           JOptionPane.showMessageDialog(this ,"New User is added to System");
           b2.setEnabled(false);
         }
+        }
+      }
        }
     }
   }

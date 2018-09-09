@@ -180,7 +180,11 @@ public void actionPerformed(ActionEvent e)
          JOptionPane.showMessageDialog(this ,"Fields cannot be empty");
        }
      else{
-       
+          if(!t3.getText().matches("^-?\\d+$") || !t4.getText().matches("^-?\\d+$") || !t5.getText().matches("^-?\\d+$") || !t6.getText().matches("^-?\\d+$") )
+          {
+            JOptionPane.showMessageDialog(this, "Enter a Whole Number");
+          }
+          else{
          String check ="SELECT * FROM fleetinfo WHERE a_code ='"+t1.getText()+"'";
          ResultSet rb =st.executeQuery(check);
          if(!rb.next())
@@ -193,6 +197,7 @@ public void actionPerformed(ActionEvent e)
        } else {
          JOptionPane.showMessageDialog(this ,"Flight Code already exists");
        }
+     }
        }
     }
   }

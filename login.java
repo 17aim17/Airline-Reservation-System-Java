@@ -82,6 +82,9 @@ public void actionPerformed(ActionEvent e){
   try{
     if(e.getSource()==bt){
           if(user.equals("User")){
+           if(tf1.getText().trim().length()==0 || tf2.getText().trim().length()==0){
+             JOptionPane.showMessageDialog(this , "Enter Username  or Password please");
+           }else{
            String check ="SELECT * FROM employee WHERE user_id = '"+tf1.getText()+"' AND password ='"+tf2.getText()+"'";
            ResultSet rs =st.executeQuery(check);
            if(rs.next()){
@@ -91,9 +94,12 @@ public void actionPerformed(ActionEvent e){
            }else{
              JOptionPane.showMessageDialog(this,"Invalid Credentials");
            }
-
+         }
 
         } else if(user.equals("Admin")){
+          if(tf1.getText().trim().length()==0 || tf2.getText().trim().length()==0){
+            JOptionPane.showMessageDialog(this , "Enter Username  or Password please");
+          }else{
            String check1 ="SELECT * FROM admin WHERE username = '"+tf1.getText()+"' AND password ='"+tf2.getText()+"'";
            ResultSet rs1 =st.executeQuery(check1);
            if(rs1.next()){
@@ -102,6 +108,7 @@ public void actionPerformed(ActionEvent e){
            }else{
              JOptionPane.showMessageDialog(this,"Invalid Credentials");
            }
+         }
         }
 
     }

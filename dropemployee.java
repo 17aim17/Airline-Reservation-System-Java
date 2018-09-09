@@ -46,8 +46,8 @@ public class dropemployee extends JInternalFrame implements ActionListener ,Item
       l5.setFont(new Font("Arial" ,Font.BOLD ,18));
 
       // buttons
-      b1 =new JButton("Drop");
-      b2 =new JButton("Cancel");
+      b1 =new JButton("Fire Him ?");
+      b2 =new JButton("Cancel!!");
 
       add(b1);
       add(b2);
@@ -99,8 +99,8 @@ public class dropemployee extends JInternalFrame implements ActionListener ,Item
       t4.setBounds(680,300,200,30);
       t5.setBounds(680,350,200,30);
 
-      b1.setBounds(550,450,100,30);
-      b2.setBounds(680,450,100,30);
+      b1.setBounds(550,450,120,30);
+      b2.setBounds(680,450,120,30);
 
       try{
         Class.forName("com.mysql.jdbc.Driver");
@@ -142,12 +142,12 @@ public class dropemployee extends JInternalFrame implements ActionListener ,Item
     {
         if(ae.getSource()==b1)
         {
-          int n =  JOptionPane.showConfirmDialog(this ,"Do you really want to kick out this employee??");
+          int n =  JOptionPane.showConfirmDialog(this ,"Do you really want to fire this employee??");
            if(n==0){
              try{
                String drop ="DELETE FROM employee WHERE user_id ='"+cb.getSelectedItem()+"'";
                st.executeUpdate(drop);
-               JOptionPane.showMessageDialog(this ,"Live long employee :"+cb.getSelectedItem() );
+               JOptionPane.showMessageDialog(this ,"No pain no gain :"+cb.getSelectedItem() );
                clear();
                cb.setSelectedIndex(0);
              } catch(Exception e) {

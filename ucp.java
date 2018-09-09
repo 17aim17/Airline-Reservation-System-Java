@@ -88,6 +88,7 @@ public void actionPerformed(ActionEvent e)
               ResultSet rs =st.executeQuery(verify);
               if(rs.next())
               {
+                if(np1.getText().matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,}")){
                   if(np1.getText().equals(np2.getText()))
                   {
                       if(!np1.getText().equals(op1.getText()))
@@ -105,7 +106,10 @@ public void actionPerformed(ActionEvent e)
                   {
                       JOptionPane.showMessageDialog(this ,"Password Does Not Match");
                   }
-              }
+                }else{
+                  JOptionPane.showMessageDialog(this, "Password must be 8 characters , must have 1 digit, 1 special char, 1 lower and upper alphabet and with no spaces");
+                }
+              }//end of if
               else
               {
                 JOptionPane.showMessageDialog(this ,"Wrong Password");

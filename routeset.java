@@ -124,7 +124,7 @@ public class routeset extends JInternalFrame implements ActionListener,ItemListe
     	    	}else{
 							  if(!t2.getText().matches("^[a-zA-Z]+$") && !t3.getText().matches("^[a-zA-Z]+$"))
 								{
-										JOptionPane.showMessageDialog(this ,"Use alphabets Only");
+										JOptionPane.showMessageDialog(this ,"Use alphabets Only for Source and Destination");
 								}else{
 									String check = "Select * from route_master where r_code='"+t1.getText()+"' or (source='"+t2.getText()+"' and destination='"+t3.getText()+"')";
 												ResultSet rs2 = stmt.executeQuery(check);
