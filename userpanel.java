@@ -23,7 +23,7 @@ class userpanel extends JFrame implements ActionListener{
         mb =new JMenuBar();
         mb.setBackground(Color.white);
         m1 =new JMenu("User");
-        m2 =new JMenu("Transaction");
+        m2 =new JMenu("Reservation");
         m3 =new JMenu("Views");
         m4 =new JMenu("Exit");
         mb.add(Box.createRigidArea(new Dimension(20,30)));
@@ -81,9 +81,9 @@ class userpanel extends JFrame implements ActionListener{
 
         setJMenuBar(mb);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        l2 =new JLabel(mg);
+      /*  l2 =new JLabel(mg);
         add(l2);
-        l2.setBounds(0,0,1920,1280);
+        l2.setBounds(0,0,1920,1280);*/
         setVisible(true);
         JOptionPane.showMessageDialog(this ,"Welcome "+user+" !!!");
 }

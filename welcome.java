@@ -18,14 +18,14 @@ public  class welcome extends JFrame implements ActionListener{
       al =new JButton("Admin Login");
       add(al);
       add(ul);
-      al.setBounds(480,450,140 ,45);
+      al.setBounds(480,450,150 ,45);
       al.setBackground(Color.blue);
       al.setForeground(Color.white);
-      al.setFont(new Font("Arial" ,Font.PLAIN,18));
-      ul.setBounds(650,450,140,45);
+      al.setFont(new Font("Arial" ,Font.BOLD,17));
+      ul.setBounds(650,450,150,45);
       ul.setBackground(Color.red);
       ul.setForeground(Color.white);
-      ul.setFont(new Font("Arial" ,Font.PLAIN,18));
+      ul.setFont(new Font("Arial" ,Font.BOLD,17));
 
 
       c.setBackground(Color.white);

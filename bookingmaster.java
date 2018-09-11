@@ -19,8 +19,8 @@ public class bookingmaster extends JInternalFrame implements ActionListener  {
   JDesktopPane pane1;
   java.util.Date cd =new java.util.Date();
   java.util.Date bd =new java.util.Date();
-  SimpleDateFormat sdf =new SimpleDateFormat("dd-MM-yyyy");
-  SimpleDateFormat sdf1 =new SimpleDateFormat("yyyy-MM-dd");
+  SimpleDateFormat sdf =new SimpleDateFormat("d-M-yyyy");
+  SimpleDateFormat sdf1 =new SimpleDateFormat("yyyy-M-d");
   JComboBox cb1,cb2,cb3 ,cb4,cb5,cb6;
   JButton b1 , b2;
   String cols[] ={"Sr No.","A-Code","Departure","Arrival","Hours" ,"Eco-seats" ,"Buis-seats"};
@@ -97,7 +97,7 @@ public class bookingmaster extends JInternalFrame implements ActionListener  {
       l3 =new JLabel("Departure Date");
       l4 =new JLabel("Passengers");
       l5 =new JLabel("Class");
-      x =new JLabel("DD-MM-YYYY");
+      x =new JLabel("(DD-MM-YYYY)");
 
 
       add(l1);
@@ -276,7 +276,22 @@ public void actionPerformed(ActionEvent e)
                 }
                 if(String.valueOf(cb1.getSelectedItem()).trim().equals(String.valueOf(cb2.getSelectedItem()).trim()))
                 {
+                  if(sp!=null)
+                          {
+                            remove(sp);
+                            sp=null;
+                            tb=null;
+                            if(but.length>0)
+                            {
+                              for(int x =0; x<but.length;x++)
+                              {
+                                remove(but[x]);
+                              }
+                            }
+                            repaint();
+                          }
                   JOptionPane.showMessageDialog(this, "Either Choose Different Source or destination");
+
                 }
                 else
                 {
@@ -329,6 +344,23 @@ public void actionPerformed(ActionEvent e)
                                     but[a].addActionListener(this);
                                   }
                                     i=0;
+                                }else{
+                                  if(sp!=null)
+                                          {
+                                            remove(sp);
+                                            sp=null;
+                                            tb=null;
+                                            if(but.length>0)
+                                            {
+                                              for(int x =0; x<but.length;x++)
+                                              {
+                                                remove(but[x]);
+                                              }
+                                            }
+                                            repaint();
+                                          }
+                                          JOptionPane.showMessageDialog(this ,"No FLights avalibale for this route , Sorry !!");
+
                                 }
 
                 }
@@ -336,6 +368,7 @@ public void actionPerformed(ActionEvent e)
             else
             {
             JOptionPane.showMessageDialog(this ,"Enter a Future Date");
+
             }
         }
      }
@@ -375,10 +408,10 @@ public void actionPerformed(ActionEvent e)
             // num tickets
             int years =0 , months=0 ,days=0;
             try{
-              DateTimeFormatter format1 =DateTimeFormatter.ofPattern("yyyy-MM-dd");
+              DateTimeFormatter format1 =DateTimeFormatter.ofPattern("yyyy-M-d");
               LocalDate d2 =LocalDate.parse(book_date , format1);
 
-              DateTimeFormatter format2 =DateTimeFormatter.ofPattern("dd-MM-yyyy");
+              DateTimeFormatter format2 =DateTimeFormatter.ofPattern("d-M-yyyy");
               LocalDate d1 =LocalDate.parse(dept_date ,format2);
 
               Period diff = Period.between(d2 ,d1);
@@ -486,7 +519,7 @@ public void actionPerformed(ActionEvent e)
           }catch(Exception ex2){
 
           }
-         }
+        }
      }
    }
     }

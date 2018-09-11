@@ -5,7 +5,7 @@ import java.awt.event.*;
 
 public class login extends JFrame implements ActionListener{
     Container c1 = getContentPane();
-    JButton bt;
+    JButton bt ,bt1;
     Connection con;
     Statement st;
     JTextField tf1 ;
@@ -29,11 +29,13 @@ public class login extends JFrame implements ActionListener{
     pn1 =new JPanel();
     pn1.setLayout(null);
     bt = new JButton("Log In");
+    bt1 = new JButton("Back");
     tf1 =new JTextField(40);
     tf2 =new JPasswordField(40);
     lb1 =new JLabel("USERNAME");
     lb2 =new JLabel("PASSWORD");
     pn1.add(bt);
+    pn1.add(bt1);
     pn1.add(tf1);
     pn1.add(tf2);
     pn1.add(lb1);
@@ -52,6 +54,9 @@ public class login extends JFrame implements ActionListener{
     bt.setFont(new Font("Arial" ,Font.BOLD ,23));
     bt.setBackground(Color.red);
     bt.setForeground(Color.white);
+    bt1.setFont(new Font("Arial" ,Font.BOLD ,23));
+    bt1.setBackground(Color.blue);
+    bt1.setForeground(Color.white);
      lb1.setForeground(Color.white);
      lb2.setForeground(Color.white);
     lb1.setFont(new Font("Arial" ,Font.BOLD ,23));
@@ -64,9 +69,11 @@ public class login extends JFrame implements ActionListener{
     lb2.setBounds(420 ,250 ,200 , 40);
     tf2.setBounds(680 ,250 ,200 , 40);
     bt.setBounds(580,350 ,140 ,40);
+    bt1.setBounds(580,415 ,140 ,40);
     setExtendedState(JFrame.MAXIMIZED_BOTH);
 
     bt.addActionListener(this);
+    bt1.addActionListener(this);
 
     //connection WHERE
     try{
@@ -111,6 +118,10 @@ public void actionPerformed(ActionEvent e){
          }
         }
 
+    }
+    if(e.getSource()==bt1){
+      this.dispose();
+      new welcome();
     }
   } catch(Exception ex) {
      JOptionPane.showMessageDialog(this,"Can not Log You in at moment");
