@@ -189,6 +189,20 @@ public void actionPerformed(ActionEvent e)
        String current_date = String.valueOf(d.get(Calendar.DATE))+"-"+String.valueOf(d.get(Calendar.MONTH)+1)+"-"+String.valueOf(d.get(Calendar.YEAR));
        if (cb1.getSelectedIndex() == 0 || cb2.getSelectedIndex() == 0 || cb3.getSelectedIndex() == 0 || cb6.getSelectedIndex() == 0 || t1.getText().trim().length()==0)
         {
+          if(sp!=null)
+                  {
+                    remove(sp);
+                    sp=null;
+                    tb=null;
+                    if(but.length>0)
+                    {
+                      for(int x =0; x<but.length;x++)
+                      {
+                        remove(but[x]);
+                      }
+                    }
+                    repaint();
+                  }
           JOptionPane.showMessageDialog(this ,"Please Fill all the fields");
         }
         else
@@ -202,6 +216,20 @@ public void actionPerformed(ActionEvent e)
           catch(ParseException f3)
           {
             temp1=1;
+            if(sp!=null)
+                    {
+                      remove(sp);
+                      sp=null;
+                      tb=null;
+                      if(but.length>0)
+                      {
+                        for(int x =0; x<but.length;x++)
+                        {
+                          remove(but[x]);
+                        }
+                      }
+                      repaint();
+                    }
             JOptionPane.showMessageDialog(this, "Enter a valid Format");
           }
 
@@ -359,7 +387,7 @@ public void actionPerformed(ActionEvent e)
                                             }
                                             repaint();
                                           }
-                                          JOptionPane.showMessageDialog(this ,"No FLights avalibale for this route , Sorry !!");
+                                          JOptionPane.showMessageDialog(this ,"Sorry !! ,No Flights avalibale for required number of tickets");
 
                                 }
 
@@ -367,8 +395,21 @@ public void actionPerformed(ActionEvent e)
             }
             else
             {
+              if(sp!=null)
+                      {
+                        remove(sp);
+                        sp=null;
+                        tb=null;
+                        if(but.length>0)
+                        {
+                          for(int x =0; x<but.length;x++)
+                          {
+                            remove(but[x]);
+                          }
+                        }
+                        repaint();
+                      }
             JOptionPane.showMessageDialog(this ,"Enter a Future Date");
-
             }
         }
      }
