@@ -387,7 +387,7 @@ public void actionPerformed(ActionEvent e)
                                             }
                                             repaint();
                                           }
-                                          JOptionPane.showMessageDialog(this ,"Sorry !! ,No Flights avalibale for required number of tickets");
+                                          JOptionPane.showMessageDialog(this ,"Sorry !! No Flights avalibale");
 
                                 }
 
